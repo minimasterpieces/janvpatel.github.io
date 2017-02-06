@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<title> JANVI PATEL </title>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+<link href="https://fonts.googleapis.com/css?family=Abel|Dosis:300,400|Inconsolata|Pathway+Gothic+One|Source+Code+Pro:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans|Fira+Sans+Extra+Condensed|Pontano+Sans|Old+Standard+TT|Open+Sans+Condensed:300|Slabo+27px" rel="stylesheet">
+<link href="style-my-tooltips.css" rel="stylesheet" type="text/css" />
+<script src="jquery.style-my-tooltips.js"></script>
+
+<script>
+
+$(document).ready(function() {
+$('body').css('display', 'none');
+$('#navbar').css('margin-left', '-425px');
+$('body').fadeIn(500);
+
+$(document).ready(function() {
+var height = "+=" + window.innerHeight + "px";
+var width = "+=" + window.innerWidth + "px";
+var changeWidth = (width - 425) + "px";
+$("#arrow").click(function(event){
+$('html, body').animate({scrollTop: height}, 800);
+});
+$("#navi").click(function(event){
+  $('#navbar').animate({marginLeft: '+=425px'}, 800);
+  $('.content').animate({marginLeft: '+=200px'}, 800);
+  $('.header').animate({marginLeft: '+=200px'}, 800);
+
+});
+
+$('#navbar').click(function(event){
+$('#navbar').animate({marginLeft: '-425px'}, 800);
+$('.content').animate({marginLeft: '-=200px'}, 800);
+$('.header').animate({marginLeft: '-=200px'}, 800);
+});
+});
+
+
+$('a').click(function() {
+event.preventDefault();
+newLocation = this.href;
+$('body').fadeOut(500, newpage);
+});
+
+function newpage() {
+window.location = newLocation;
+}
+});
+</script>
+
+</head>
+
+<style type="text/css">
+
+::-webkit-scrollbar {
+background-color: transparent;
+width: 3px;
+}
+
+#s-m-t-tooltip {
+  max-width:300px;
+  background-color: rgba(255,255,255,0.9);
+  border:1px solid black;
+  font-size:11px;
+  color: #000;
+  letter-spacing:0px;
+  text-transform:lowercase;
+  padding:3px;
+  margin:15px 0px 0px 15px;
+  z-index:999;
+}
+
+body {
+background-color: white;
+font-family: 'Abel', sans-serif;
+text-transform: uppercase;
+cursor: crosshair;
+padding: none;
+margin: 0;
+overflow-x: hidden;
+overflow-y: scroll;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+  outline: none;
+  color: #292929;
+}
+h1 {
+font-size: 35px;
+text-align: center;
+letter-spacing: 10px;
+font-family: "Abel";
+border-bottom: 1px solid #000;
+text-align: right;
+}
+
+.screen {
+position: relative;
+padding: 1px;
+width: 100vw;
+height: 100vh;
+background: transparent;
+box-sizing: padding-box;
+}
+
+.front {
+position: absolute;
+width: 100vw;
+height: 100vh;
+background-image: url('https://images.unsplash.com/photo-1449247709967-d4461a6a6103?dpr=1&auto=compress,format&fit=crop&w=991&h=661&q=80&cs=tinysrgb&crop=');
+background-position: 180px;
+}
+
+#arrow, #arrow img{
+position: absolute;
+width: 75px;
+opacity: 0.8;
+left: 0;
+right: 0;
+margin: auto;
+bottom: 30px;
+}
+
+#arrow1 img{
+position: absolute;
+width: 75px;
+opacity: 0.8;
+left: 0;
+right: 0;
+margin: auto;
+bottom: 10px;
+transform: rotate(270deg);
+}
+
+
+.content {
+width:  calc(100vw - 425px);
+height:100vh;
+margin: auto;
+box-sizing:border-box;
+font-family: 'Slabo 27px', sans-serif;
+text-transform: none;
+color: #252525;
+line-height: 30px;
+font-size: 17px;
+padding: 15px;
+background-color: white;
+overflow-y: scroll;
+}
+
+#navbar{
+position: absolute;
+width: 425px;
+height: 100vh;
+box-sizing: border-box;
+background-color: #fefefe;
+padding: 15px;
+text-align: center;;
+}
+
+#navbar img{
+float: right;
+}
+
+#profile {
+width: 100px;
+border-radius: 15px;
+height: 40px;
+margin: auto;
+background-color: #F74126;
+margin-top: 75px;
+padding: 20px;
+}
+
+#profile img{
+width: 100px;
+margin: auto;
+vertical-align: middle;
+}
+
+#title {
+position: relative;
+width: 200px;
+margin: auto;
+text-align: center;
+letter-spacing: 10px;
+font-size: 70px;
+padding-top: 30px;
+padding-bottom: 10px;
+border-bottom: 1px solid #252525;
+}
+
+#nav{
+position: relative;
+width: 350px;
+left: 0;
+right: 0;
+top: 25px;
+margin: auto;
+text-align: center;
+letter-spacing: 3px;
+font-size: 16px;
+text-align: center;
+}
+
+#nav a {
+padding: 8px;
+margin: 5px;
+text-decoration: none;
+color: #fafafa;
+background-color: rgba(29,29,29, 0.8);
+}
+
+#nav a:hover{
+background-color: #F74126;
+color: #fafafa;
+}
+
+#navi img {
+position: absolute;
+margin-top: 20px;
+margin-left: 20px;
+width: 40px;
+}
+
+#social {
+position: relative;
+left: 0;
+right: 0;
+padding: 10px;
+background-color: transparent;
+text-align: center;
+top: 0px;
+}
+
+#social img{
+margin: 0px;
+padding: 5px;
+width: 30px;
+opacity: 0.7;
+} #social img:hover{
+opacity: 1;
+}
+
+.box {
+  display: inline-block;
+  float: center;
+  width: 400px;
+  height: 295px;
+  margin: auto;
+}
+
+.boxcover {
+  width: 400px;
+  height:295px;
+  z-index: 999;
+  opacity: 0;
+  padding-top: 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-family: "Abel";
+  font-weight: bold;
+  -webkit-transition: 0.7s; /* Safari */
+    transition: 0.7s;
+    overflow-y: scroll;
+    background-color:  white;
+    padding-top: 50px;
+}
+
+.boxcover:hover{
+  opacity: 0.9;
+  -webkit-transition: 0.7s; /* Safari */
+    transition: 0.7s;
+}
+
+.header {
+  position: absolute;
+  height: auto;
+  width: 150px;
+  color: #292929;
+  font-size: 30px;
+  word-wrap: break-word;
+  right: 100px;
+  box-sizing: border-box;
+  border-left: 1px solid #292929;
+  padding-left: 20px;
+  margin-top: 15px;
+  text-align:left;
+}
+
+.info {
+  position: absolute;
+  height: auto;
+  color: #292929;
+  font-size: 30px;
+  box-sizing: border-box;
+  border-right: 1px solid #292929;
+  text-align: right;
+  padding-right: 20px;
+  margin-top: calc(100vh - 150px);
+  margin-left: calc(100vw - 95vw);
+  height: 125px;
+}
+
+</style>
+</head>
+
+<body><div class="front"></div>
+<div class="screen">
+<div id="profile" title="hello"><a href=""><img src="https://scontent-yyz1-1.xx.fbcdn.net/v/t34.0-12/15879377_10212177843389204_1553628780_n.png?oh=cf28cb9406bf8556e5693b0ae4453621&oe=5897467B"></a></div>
+<div id="title">JANVI PATEL</div>
+  <div id="social">
+  <a href="https://www.linkedin.com/in/janvipatel/" title="linkedin"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-512.png"></a>
+  <a href="https://github.com/janvpatel" title="github"><img src="http://jaouan.com/github.png"></a>
+
+</div>
+
+<div id="arrow"><img src="https://img.clipartfest.com/09108bd92b38e51f645e5a191d6f8a1a_arrows-down-3-icoicnspng-arrows-down_256-256.ico"></div>
+</div>
+
+
+<div class="header">WEB PORTFOLIO</div>
+
+<div class="info">Janvi Patel<br> <span style="font-size: 14px;">janvipatel@outlook.com</span>
+  <div id="social" style="position: relative; padding-right: 20px;">
+  <span style="float: right;"><a href="https://www.linkedin.com/in/janvipatel/" title="linkedin"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-512.png"></a>
+  <a href="https://github.com/janvpatel" title="github"><img src="http://jaouan.com/github.png"></a></span>
+  </div>
+</div>
+
+  <div class="content">
+<center>
+  <div class="box" style="background-image:url('https://68.media.tumblr.com/8dd9d1f858f1d3102b21f36c0db9110b/tumblr_okxoj6NG861qi7le7o1_540.png'); margin:auto;">
+    <div class="boxcover">MAGAZINE COVER
+      <p style="font-size: 12px; letter-spacing: 5px; padding: 20px; text-align: center;">Editing done on Adobe Photoshop.<br><br>
+    <a href="https://68.media.tumblr.com/8dd9d1f858f1d3102b21f36c0db9110b/tumblr_okxoj6NG861qi7le7o1_540.png">view</a></p></div></div>
+
+<div class="box" style="background-image:url('http://68.media.tumblr.com/9f22e92c1bb15ac2a6de7297fd654f04/tumblr_nm8z9hnJts1qi7le7o1_r1_1280.jpg'); background-size: 400px 300px;">
+  <div class="boxcover">aerie
+  <p style="font-size: 12px; letter-spacing: 5px; padding: 20px; text-align: center;">Created using HTML/CSS.<br>
+  <br>
+<a href="http://pastebin.com/RJ5u1BWA" target="_blank">code</a> ✿ <a href="http://68.media.tumblr.com/9f22e92c1bb15ac2a6de7297fd654f04/tumblr_nm8z9hnJts1qi7le7o1_r1_1280.jpg">view</a></p></div></div>
+
+  <div class="box" style="background-image:url('http://68.media.tumblr.com/7d9fb2b0f1c7e221de18deaa14493dcc/tumblr_nczmralq9j1qi7le7o1_r1_1280.jpg'); background-size: 400px 300px;">
+    <div class="boxcover">caelestis
+      <p style="font-size: 12px; letter-spacing: 5px; padding: 20px; text-align: center;">Created using HTML/CSS.<br>
+      <br>
+    <a href="http://pastebin.com/uPjbsYJ3" target="_blank">code</a> ✿ <a href="http://68.media.tumblr.com/9f22e92c1bb15ac2a6de7297fd654f04/tumblr_nm8z9hnJts1qi7le7o1_r1_1280.jpg">view</a></p></div></div>
+
+
+        <div class="box" style="background-image:url('http://68.media.tumblr.com/f499204539ceb9211d6815ed874085e7/tumblr_nlfh5gpzkm1qi7le7o3_1280.png'); background-position: 0px -70px; background-size:cover;">
+          <div class="boxcover">DIGITAL ART
+            <p style="font-size: 12px; letter-spacing: 5px; padding: 20px; text-align: center;">Artwork done on Paint Tool Sai using a Wacom Bamboo Tablet <br><br>
+          <a href="http://68.media.tumblr.com/f499204539ceb9211d6815ed874085e7/tumblr_nlfh5gpzkm1qi7le7o3_1280.png">view</a></p></div></div>
+
+
+</center>
+
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
