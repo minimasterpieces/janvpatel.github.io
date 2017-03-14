@@ -1,382 +1,227 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
-<title> JANVI PATEL </title>
+<title> Janvi Patel </title>
 <link rel="shortcut icon" href="https://scontent-yyz1-1.xx.fbcdn.net/v/t34.0-12/15910082_10212177613103447_1917595048_n.png?oh=de0dd57b9209c2e3b11b8ba5ed702a90&oe=589A7FEF">
-<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
-<link href="https://fonts.googleapis.com/css?family=Abel|Dosis:300,400|Inconsolata|Pathway+Gothic+One|Source+Code+Pro:300" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Droid+Sans|Fira+Sans+Extra+Condensed|Pontano+Sans|Old+Standard+TT|Open+Sans+Condensed:300|Slabo+27px" rel="stylesheet">
-<link href="style-my-tooltips.css" rel="stylesheet" type="text/css" />
-<script src="jquery.style-my-tooltips.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Quattrocento|Lora|Oswald:300,400,500,600" rel="stylesheet">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
-
 $(document).ready(function() {
-$('body').css('display', 'none');
-$('#navbar').css('margin-left', '-425px');
-$('body').fadeIn(500);
-
-$(document).ready(function() {
-var height = "+=" + window.innerHeight + "px";
-var width = "+=" + window.innerWidth + "px";
-var changeWidth = (width - 425) + "px";
-$("#arrow").click(function(event){
-$('html, body').animate({scrollTop: height}, 800);
-});
-$("#navi").click(function(event){
-  $('#navbar').animate({marginLeft: '+=425px'}, 800);
-  $('.content').animate({marginLeft: '+=200px'}, 800);
-  $('.header').animate({marginLeft: '+=200px'}, 800);
-
+$("#arrow").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#header").offset().top},
+        1000);
 });
 
-$('#navbar').click(function(event){
-$('#navbar').animate({marginLeft: '-425px'}, 800);
-$('.content').animate({marginLeft: '-=200px'}, 800);
-$('.header').animate({marginLeft: '-=200px'}, 800);
-});
-});
-
-
-$('a').click(function() {
-event.preventDefault();
-newLocation = this.href;
-$('body').fadeOut(500, newpage);
+$("#arrow1").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".wrapper1").offset().top},
+        1000);
 });
 
-function newpage() {
-window.location = newLocation;
-}
+$("#arrow2").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".wrapper2").offset().top},
+        1000);
+});
 });
 </script>
 
 </head>
 
 <style type="text/css">
-
 ::-webkit-scrollbar {
 background-color: transparent;
 width: 3px;
 }
 
-#s-m-t-tooltip {
-  max-width:300px;
-  background-color: rgba(255,255,255,0.9);
-  border:1px solid black;
-  font-size:11px;
-  color: #000;
-  letter-spacing:0px;
-  text-transform:lowercase;
-  padding:3px;
-  margin:15px 0px 0px 15px;
-  z-index:999;
-}
-
 body {
-background-color: white;
-font-family: 'Abel', sans-serif;
-text-transform: uppercase;
-cursor: crosshair;
-padding: none;
-margin: 0;
-overflow-x: hidden;
-overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  cursor: crosshair;
 }
-
-a, a:visited, a:active {
-  text-decoration: none;
-  outline: none;
-  color: #292929;
+.wrapper, .wrapper1, .wrapper2{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
-h1 {
-font-size: 35px;
-text-align: center;
-letter-spacing: 10px;
-font-family: "Abel";
-border-bottom: 1px solid #000;
-text-align: right;
+#front {
+  width: 100vw;
+  height: 100vh;
+  background: url('http://i66.tinypic.com/14vn0w3.jpg;') center center no-repeat;
+  background-size: cover;
+  margin: 0;
+  color: #fff;
 }
-
-.screen {
-position: relative;
-padding: 1px;
-width: 100vw;
-height: 100vh;
-background: transparent;
-box-sizing: padding-box;
-}
-
-.front {
-position: absolute;
-width: 100vw;
-height: 100vh;
-background: url(https://images.unsplash.com/photo-1449247709967-d4461a6a6103?dpr=1&auto=compress,format&fit=crop&w=991&h=661&q=80&cs=tinysrgb&crop=) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-}
-
-#arrow, #arrow img{
-position: absolute;
-width: 75px;
-opacity: 0.8;
-left: 0;
-right: 0;
-margin: auto;
-bottom: 30px;
-}
-
-#arrow1 img{
-position: absolute;
-width: 75px;
-opacity: 0.8;
-left: 0;
-right: 0;
-margin: auto;
-bottom: 10px;
-transform: rotate(270deg);
-}
-
-
-.content {
-width:  calc(100vw - 425px);
-height: 100vh;
-margin: auto;
-width: 100vw;
-box-sizing:border-box;
-font-family: 'Abel', sans-serif;
-text-transform: none;
-color: #252525;
-line-height: 30px;
-font-size: 17px;
-padding: 15px;
-background-color: white;
-overflow-y: hidden;
-}
-
-.inner {
-width:  calc(100vw - 425px);
-height:100vh;
-margin: auto;
-background-color: white;
-overflow-y: scroll;
-}
-
-#navbar{
-position: absolute;
-width: 425px;
-height: 100vh;
-box-sizing: border-box;
-background-color: #fefefe;
-padding: 15px;
-text-align: center;;
-}
-
-#navbar img{
-float: right;
-}
-
-#profile {
-width: 100px;
-border-radius: 15px;
-height: 40px;
-margin: auto;
-background-color: #F74126;
-margin-top: 75px;
-padding: 20px;
-}
-
-#profile img{
-width: 100px;
-margin: auto;
-vertical-align: middle;
-}
-
-#title {
-position: relative;
-width: 200px;
-margin: auto;
-text-align: center;
-letter-spacing: 10px;
-font-size: 70px;
-padding-top: 30px;
-padding-bottom: 10px;
-border-bottom: 1px solid #252525;
-}
-
-#nav{
-position: relative;
-width: 350px;
-left: 0;
-right: 0;
-top: 25px;
-margin: auto;
-text-align: center;
-letter-spacing: 3px;
-font-size: 16px;
-text-align: center;
-}
-
-#nav a {
-padding: 8px;
-margin: 5px;
-text-decoration: none;
-color: #fafafa;
-background-color: rgba(29,29,29, 0.8);
-}
-
-#nav a:hover{
-background-color: #F74126;
-color: #fafafa;
-}
-
-#navi img {
-position: absolute;
-margin-top: 20px;
-margin-left: 20px;
-width: 40px;
-}
-
-#social {
-position: relative;
-left: 0;
-right: 0;
-padding: 10px;
-background-color: transparent;
-text-align: center;
-top: 0px;
-}
-
-#social img{
-margin: 0px;
-padding: 5px;
-width: 30px;
-opacity: 0.7;
-} #social img:hover{
-opacity: 1;
-}
-
-.box {
-  display: inline-block;
-  float: center;
-  width: 400px;
-  height: 295px;
-  margin: auto;
-}
-
-.boxcover {
-  width: 400px;
-  height:295px;
-  z-index: 999;
-  opacity: 0;
-  padding-top: 20px;
+.contentr {
+  position: absolute;
+  width: calc(100vw - 450px);
+  height: 100vh;
+  float:right;
+  background-color: #fff;
+  margin-left: 450px;
   box-sizing: border-box;
-  font-size: 20px;
+  padding: 50px;
+  font-size: 30px;
+  font-family: 'Quattrocento', serif;
+}.contentl {
+  position: absolute;
+  width: calc(100vw - 450px);
+  float: left;
+  height: 100vh;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 50px;
+  font-size: 30px;
+  font-family: 'Quattrocento', serif;
+} .text{
+  font-size: 15px;
+  line-height: 25px;
+  text-align: justify;
+
+}
+.circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  left: 50%;
+  top: 40%;
+  margin-left: -175px;
+  margin-top: -210px;
   text-align: center;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  font-family: "Abel";
-  font-weight: bold;
-  -webkit-transition: 0.7s; /* Safari */
-    transition: 0.7s;
-    overflow-y: scroll;
-    background-color:  white;
-    padding-top: 50px;
-}
-
-.boxcover:hover{
-  opacity: 0.9;
-  -webkit-transition: 0.7s; /* Safari */
-    transition: 0.7s;
-}
-
-.header {
-  position: absolute;
-  height: auto;
-  width: auto;
-  color: #292929;
-  font-size: 30px;
-  word-wrap: break-word;
-  right: calc(100vw - 92vw);
+  background-color: #F46036;
   box-sizing: border-box;
-  border-left: 1px solid #292929;
-  padding-left: 20px;
-  text-align:left;
+  padding: 20px;
+  border-radius: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.info {
+.name {
+  font-size: 80px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+.sidel{
   position: absolute;
-  height: auto;
-  color: #292929;
-  font-size: 30px;
+  float: left;
+  width: 450px;
+  background-color: #FFED66;
+  height: 100vh;
   box-sizing: border-box;
-  border-right: 1px solid #292929;
+  padding: 40px;
+}.sider{
+  position: absolute;
+  margin-left: calc(100vw - 450px);
+  width: 450px;
+  background-color: #F46036;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.title{
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 3px;
+  font-size:  50px;
+  text-align:center;
+  font-weight: 500;
+}
+
+#arrow, #arrow1, #arrow2{
+  position: absolute;
+  width: 70px;
+  left: 50%;
+  bottom: 15px;
+  margin-left: -35px;
+}
+
+#header {
+  width: 100vw;
+  height: 50px;
+  background-color: #292929;
+  color: white;
+  box-sizing: border-box;
   text-align: right;
-  padding-right: 20px;
-  text-transform: uppercase;
-  margin-left: calc(100vw - 95vw);
-  height: auto;
 }
-
-
-
+.nav {
+float: right;
+height: 50px;
+font-family: 'Oswald', sans-serif;
+font-weight: 300;
+letter-spacing: 2px;
+font-size: 14px;
+} #about, #portfolio, #contact {
+  height: 50px;
+  float:right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
 </style>
 </head>
 
-<body><div class="front"></div>
-<div class="screen">
-<div id="profile"><a href=""><img src="https://68.media.tumblr.com/0b12a3cf2806ce443fb8f73dbee412a9/tumblr_okwxmvxSd51qi7le7o2_1280.png"></a></div>
-<div id="title">JANVI PATEL</div>
-  <div id="social">
-  <a href="https://www.linkedin.com/in/janvipatel/" title="linkedin"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-512.png"></a>
-  <a href="https://github.com/janvpatel" title="github"><img src="http://jaouan.com/github.png"></a>
-
-</div>
-
-<div id="arrow"><img src="https://img.clipartfest.com/09108bd92b38e51f645e5a191d6f8a1a_arrows-down-3-icoicnspng-arrows-down_256-256.ico"></div>
-</div>
-
-  <div class="content">
-    <div class="header">WEB<br>PORTFOLIO</div>
-<div class="info">
-<br>Janvi Patel<br> <span style="font-size: 14px;">janvipatel@outlook.com</span>
-  <div id="social" style="position: relative; padding-right: 20px;">
-  <span style="float: right;"><a href="https://www.linkedin.com/in/janvipatel/" title="linkedin"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_black-512.png"></a>
-  <a href="https://github.com/janvpatel" title="github"><img src="http://jaouan.com/github.png"></a></span>
+<body>
+  <div id="front">
+    <div class="circle"><div class="name">JANVI PATEL</div></div>
+    <div id="arrow"> <img src="https://68.media.tumblr.com/c376d764c0b22ce75ece46d59dbe724f/tumblr_omrvk9T1Lt1qi7le7o3_r1_250.png" width="70"></div>
   </div>
+
+
+  <div class="wrapper">
+  <div id="header"><div class="nav"><div id="contact" style="background-color:#78d1fe;">CONTACT</div>
+  <div id="portfolio" style="background-color:#F46036;">PORTFOLIO</div>
+  <div id="about" style="background-color:#FFED66;">ABOUT</div></div></div>
+  <div class="sidel"><div class="title">ABOUT ME</div></div>
+  <div class="contentr">
+    <div class="title" style="color: #292929; text-align: left; font-size: 40px;">I'm Janvi.</div>
+    <div class="text">
+      <p>I am currently a first-year student at the University of Waterloo, aiming to obtain my Bachelor of Computer Science. </p>
+      <p>I am friendly, outgoing, and I have a keen interest in using my artistic talents in combination with my technical computer skills for graphic design, web design,
+      and front-end web development. I have self-taught experience in HTML/CSS/JQuery/JavaScript, and plan to widen my horizons to
+      enhance my coding skills in C, Python, and Java so that I can practice with Android app development in the future.</p>
+      <p>Outside of school, I enjoy participating in coding, sports (volleyball, basketball), reading, music (piano, guitar, clarinet), visual arts, and volunteering activities.</p>
+      <p>Overall, I am a hardworker and I enjoy challenging myself to do better and obtain better results. In the future, I would like to tackle on jobs that would allow
+      me to develop and grow as a person so that I am able to contribute to society even more. I hope to become a future role model to the younger generation of girls,
+      and inspire them to pursue careers in the STEM industry!</p></div></div>
+      <div id="arrow1"> <img src="https://68.media.tumblr.com/c376d764c0b22ce75ece46d59dbe724f/tumblr_omrvk9T1Lt1qi7le7o3_r1_250.png" width="70"></div>
+    </div>
+    </div>
+    <div class="wrapper1">
+      <div id="header"><div class="nav"><div id="contact" style="background-color:#78d1fe;">CONTACT</div>
+      <div id="portfolio" style="background-color:#F46036;">PORTFOLIO</div>
+      <div id="about" style="background-color:#FFED66;">ABOUT</div></div></div>
+        <div class="sider"><div class="title" style="color:white;">PORTFOLIO</div></div>
+      <div class="contentl">
+        <div class="title" style="color: #292929; text-align: left; font-size: 40px;">Here's what I've done.</div>
+        <div class="text">
+          write something here</div></div>
+          <div id="arrow2"> <img src="https://68.media.tumblr.com/c376d764c0b22ce75ece46d59dbe724f/tumblr_omrvk9T1Lt1qi7le7o3_r1_250.png" width="70"></div>
+
+  </div>
+  <div class="wrapper2">
+    <div id="header"><div class="nav"><div id="contact" style="background-color:#78d1fe;">CONTACT</div>
+    <div id="portfolio" style="background-color:#F46036;">PORTFOLIO</div>
+    <div id="about" style="background-color:#FFED66;">ABOUT</div></div></div>
+      <div class="sidel" style="background-color:#78d1fe;"><div class="title" style="color:white;">CONTACT ME</div></div>
+    <div class="contentr">
+    <div class="title" style="color: #292929; text-align: left; font-size: 40px;">Contact me.</div>
+      <div class="text">
+      write something here</div></div>
 </div>
-    <div class="inner">
-<center>
-  <div class="box" style="background-image:url('https://68.media.tumblr.com/8dd9d1f858f1d3102b21f36c0db9110b/tumblr_okxoj6NG861qi7le7o1_540.png'); margin:auto;">
-    <div class="boxcover">MAGAZINE COVER
-      <p style="font-size: 12px; letter-spacing: 5px; padding: 20px; text-align: center;">Editing done on Adobe Photoshop.<br><br>
-    <a href="https://68.media.tumblr.com/8dd9d1f858f1d3102b21f36c0db9110b/tumblr_okxoj6NG861qi7le7o1_540.png">view</a></p></div></div>
 
-<div class="box" style="background-image:url('http://68.media.tumblr.com/9f22e92c1bb15ac2a6de7297fd654f04/tumblr_nm8z9hnJts1qi7le7o1_r1_1280.jpg'); background-size: 400px 300px;">
-  <div class="boxcover">aerie
-  <p style="font-size: 12px; letter-spacing: 5px; padding: 20px; text-align: center;">Created using HTML/CSS.<br>
-  <br>
-<a href="http://pastebin.com/RJ5u1BWA" target="_blank">code</a> ✿ <a href="http://karasunogf.tumblr.com/aerie/2">view</a></p></div></div>
-
-  <div class="box" style="background-image:url('http://68.media.tumblr.com/62477fc175cf4d49842f90fac414945c/tumblr_ngjenr61vN1qi7le7o1_r1_1280.jpg'); background-size: 400px 300px;">
-    <div class="boxcover">caelestis
-      <p style="font-size: 12px; letter-spacing: 5px; padding: 20px; text-align: center;">Created using HTML/CSS.<br>
-      <br>
-    <a href="http://pastebin.com/DP0F5ZTy" target="_blank">code</a> ✿ <a href="http://karasunogf.tumblr.com/caelestis/1">view</a></p></div></div>
-
-
-        <div class="box" style="background-image:url('http://68.media.tumblr.com/f499204539ceb9211d6815ed874085e7/tumblr_nlfh5gpzkm1qi7le7o3_1280.png'); background-position: 0px -70px; background-size:cover;">
-          <div class="boxcover">DIGITAL ART
-            <p style="font-size: 12px; letter-spacing: 5px; padding: 20px; text-align: center;">Artwork done on Paint Tool Sai using a Wacom Bamboo Tablet <br><br>
-          <a href="http://68.media.tumblr.com/f499204539ceb9211d6815ed874085e7/tumblr_nlfh5gpzkm1qi7le7o3_1280.png">view</a></p></div></div>
-
-
-</center>
-</div>
-</div>
-</div>
 </div>
 
+</div>
 
 </body>
 </html>
