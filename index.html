@@ -7,23 +7,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-$("#arrow").click(function() {
+$("#front").click(function() {
     $('html,body').animate({
-        scrollTop: $("#header").offset().top},
+        scrollTop: $(".wrapper").offset().top},
         1000);
+    $('#gallery').animate({
+        scrollTop:  0},
+        1000);
+});
+var currentPos = 0;
+var viewportHeight = $(window).height()
+$("#arrow[name='down']").click(function() {
+  $('#gallery').animate({
+      scrollTop:  '+='+viewportHeight},
+      1000);
 });
 
-$("#arrow1").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".wrapper1").offset().top},
-        1000);
+$("#arrow[name='up']").click(function() {
+  $('#gallery').animate({
+      scrollTop: '-='+viewportHeight},
+      1000);
 });
 
-$("#arrow2").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".wrapper2").offset().top},
-        1000);
-});
 });
 </script>
 
@@ -41,11 +46,7 @@ body {
   overflow-x: hidden;
   cursor: crosshair;
 }
-.wrapper, .wrapper1, .wrapper2{
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-}
+
 #front {
   width: 100vw;
   height: 100vh;
@@ -53,35 +54,8 @@ body {
   background-size: cover;
   margin: 0;
   color: #fff;
-}
-.contentr {
-  position: absolute;
-  width: calc(100vw - 450px);
-  height: 100vh;
-  float:right;
-  background-color: #fff;
-  margin-left: 450px;
-  box-sizing: border-box;
-  padding: 50px;
-  font-size: 30px;
-  font-family: 'Quattrocento', serif;
-}.contentl {
-  position: absolute;
-  width: calc(100vw - 450px);
-  float: left;
-  height: 100vh;
-  background-color: #fff;
-  box-sizing: border-box;
-  padding: 50px;
-  font-size: 30px;
-  font-family: 'Quattrocento', serif;
-} .text{
-  font-size: 15px;
-  line-height: 25px;
-  text-align: justify;
-
-}
-.circle {
+  overflow-y: scroll;
+}.circle {
   position: absolute;
   width: 350px;
   height: 350px;
@@ -107,28 +81,49 @@ body {
   text-align: center;
   color: #fff;
 }
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
 
-.sidel{
+#gallery {
+  width: calc(100vw - 450px);
+  height: 100vh;
+  margin-left: 450px;
+  background-color: transparent;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.content {
+  width: calc(100vw - 450px);
+  height: 100vh;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 50px;
+  font-size: 30px;
+  font-family: 'Quattrocento', serif;
+  overflow-y: hidden;
+}.text{
+  font-size: 15px;
+  line-height: 25px;
+  text-align: justify;
+}
+
+.side{
   position: absolute;
   float: left;
   width: 450px;
-  background-color: #FFED66;
-  background-color: #ffe589;
-  height: 100vh;
-  box-sizing: border-box;
-  padding: 40px;
-}.sider{
-  position: absolute;
-  margin-left: calc(100vw - 450px);
-  width: 450px;
-  background-color: #F46036;
+  background-color: #ff9d7a;
+  border-right: 1px solid #aaa;
   height: 100vh;
   box-sizing: border-box;
   padding: 40px;
 }
 
 .title{
-  color: white;
+  color: #292929;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 3px;
   font-size:  50px;
@@ -136,29 +131,22 @@ body {
   font-weight: 500;
 }
 
-#arrow, #arrow1, #arrow2{
+#arrow{
   position: absolute;
-  width: 70px;
-  left: 50%;
-  bottom: 15px;
-  margin-left: -35px;
+  padding: 10px 7px 10px 7px;
+  margin-left: 360px;
+  border: 1px solid #efefef;
+  border-radius: 100px;
+  background-color: #fefefe;
 }
 
-#header {
-  width: 100vw;
-  height: 50px;
-  background-color: #292929;
-  color: white;
-  box-sizing: border-box;
-  text-align: right;
-}
 .nav {
-float: right;
-height: 50px;
-font-family: 'Oswald', sans-serif;
-font-weight: 300;
-letter-spacing: 2px;
-font-size: 14px;
+position: absolute;
+z-index: 999;
+height: 100vh;
+width: 2px;
+right: 10px;
+background-color: red;
 } #about, #portfolio, #contact {
   height: 50px;
   float:right;
@@ -174,16 +162,18 @@ font-size: 14px;
 <body>
   <div id="front">
     <div class="circle"><div class="name">JANVI PATEL</div></div>
-    <div id="arrow"> <img src="https://68.media.tumblr.com/c376d764c0b22ce75ece46d59dbe724f/tumblr_omrvk9T1Lt1qi7le7o3_r1_250.png" width="70"></div>
+
   </div>
 
 
   <div class="wrapper">
-  <div id="header"><div class="nav"><div id="contact" style="background-color:#78d1fe;">CONTACT</div>
-  <div id="portfolio" style="background-color:#F46036;">PORTFOLIO</div>
-  <div id="about" style="background-color:#FFED66;">ABOUT</div></div></div>
-  <div class="sidel"><div class="title">ABOUT ME</div></div>
-  <div class="contentr">
+
+  <div class="side"><div class="title">JANVI PATEL</div>
+  <div id="arrow" name="up" style="top: 10px;"> <img src="https://68.media.tumblr.com/1a03334a6505a216edef5084ed0aff50/tumblr_omx93mCjps1qi7le7o2_75sq.png" width="15"></div>
+<div id="arrow" name="down" style="bottom:10px;"> <img src="https://68.media.tumblr.com/bd9c7a90c49b699212baa22562a0f2e3/tumblr_omx93mCjps1qi7le7o1_75sq.png" width="15"></div></div>
+
+  <div id="gallery">
+  <div class="content" name="about">
     <div class="title" style="color: #292929; text-align: left; font-size: 40px;">I'm Janvi.</div>
     <div class="text">
       <p>I am currently a first-year student at the University of Waterloo, aiming to obtain my Bachelor of Computer Science. </p>
@@ -194,33 +184,18 @@ font-size: 14px;
       <p>Overall, I am a hardworker and I enjoy challenging myself to do better and obtain better results. In the future, I would like to tackle on jobs that would allow
       me to develop and grow as a person so that I am able to contribute to society even more. I hope to become a future role model to the younger generation of girls,
       and inspire them to pursue careers in the STEM industry!</p></div></div>
-      <div id="arrow1"> <img src="https://68.media.tumblr.com/c376d764c0b22ce75ece46d59dbe724f/tumblr_omrvk9T1Lt1qi7le7o3_r1_250.png" width="70"></div>
-    </div>
-    </div>
-    <div class="wrapper1">
-      <div id="header"><div class="nav"><div id="contact" style="background-color:#78d1fe;">CONTACT</div>
-      <div id="portfolio" style="background-color:#F46036;">PORTFOLIO</div>
-      <div id="about" style="background-color:#FFED66;">ABOUT</div></div></div>
-        <div class="sider"><div class="title" style="color:white;">PORTFOLIO</div></div>
-      <div class="contentl">
-        <div class="title" style="color: #292929; text-align: left; font-size: 40px;">Here's what I've done.</div>
+
+      <div class="content" name="projects">
+        <div class="title" style="color: #292929; text-align: left; font-size: 40px;">Here's What I've Done</div>
         <div class="text">
-          write something here</div></div>
-          <div id="arrow2"> <img src="https://68.media.tumblr.com/c376d764c0b22ce75ece46d59dbe724f/tumblr_omrvk9T1Lt1qi7le7o3_r1_250.png" width="70"></div>
-
-  </div>
-  <div class="wrapper2">
-    <div id="header"><div class="nav"><div id="contact" style="background-color:#78d1fe;">CONTACT</div>
-    <div id="portfolio" style="background-color:#F46036;">PORTFOLIO</div>
-    <div id="about" style="background-color:#FFED66;">ABOUT</div></div></div>
-      <div class="sidel" style="background-color:#78d1fe;"><div class="title" style="color:white;">CONTACT ME</div></div>
-    <div class="contentr">
-    <div class="title" style="color: #292929; text-align: left; font-size: 40px;">Contact me.</div>
-      <div class="text">
-      write something here</div></div>
-</div>
-
-</div>
+          project gallery
+        </div></div>
+          <div class="content" name="contact">
+            <div class="title" style="color: #292929; text-align: left; font-size: 40px;">Here's Where to Find Me</div>
+            <div class="text">
+              Details coming soon.
+            </div></div>
+    </div>
 
 </div>
 
