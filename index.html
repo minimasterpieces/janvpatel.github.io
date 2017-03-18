@@ -1,12 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
 <title> Janvi Patel </title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="https://scontent-yyz1-1.xx.fbcdn.net/v/t34.0-12/15910082_10212177613103447_1917595048_n.png?oh=de0dd57b9209c2e3b11b8ba5ed702a90&oe=589A7FEF">
 <link href="https://fonts.googleapis.com/css?family=Quattrocento|Lora|Oswald:300,400,500,600" rel="stylesheet">
-
+<script src="http://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function() {
+    $('body').animate({
+      opacity: 1},
+    1500);
 $("#front").click(function() {
     $('html,body').animate({
         scrollTop: $(".wrapper").offset().top},
@@ -15,8 +22,10 @@ $("#front").click(function() {
         scrollTop:  0},
         1000);
 });
-var currentPos = 0;
-var viewportHeight = $(window).height()
+
+
+var viewportHeight = $(window).height();
+
 $("#arrow[name='down']").click(function() {
   $('#gallery').animate({
       scrollTop:  '+='+viewportHeight},
@@ -35,12 +44,42 @@ $("#arrow[name='up']").click(function() {
 </head>
 
 <style type="text/css">
+
+::selection {
+  background: #292929;
+  color: white;
+}
+::-moz-selection {
+  background: #292929;
+  color: white;
+}
+
+::-webkit-selection{
+  background: #292929;
+  color: white;
+}
+
+#s-m-t-tooltip {
+  max-width:300px;
+  background-color: rgba(255,255,255,0.9);
+  border:1px solid #eee;
+  font-size:11px;
+  color: #292929;
+  letter-spacing:0px;
+  text-transform:lowercase;
+  padding:3px;
+  margin:15px 0px 0px 15px;
+  z-index:999;
+  content: attr(title);
+}
+
 ::-webkit-scrollbar {
 background-color: transparent;
 width: 3px;
 }
 
 body {
+  opacity: 0;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
@@ -54,7 +93,7 @@ body {
   background-size: cover;
   margin: 0;
   color: #fff;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }.circle {
   position: absolute;
   width: 350px;
@@ -85,13 +124,14 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 #gallery {
-  width: calc(100vw - 450px);
+  width: 100vw;
   height: 100vh;
   margin-left: 450px;
-  background-color: transparent;
+  background-color: #f3f3f3;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -115,15 +155,14 @@ body {
   position: absolute;
   float: left;
   width: 450px;
-  background-color: #ff9d7a;
-  border-right: 1px solid #aaa;
+  background-color: #F46036;
   height: 100vh;
   box-sizing: border-box;
   padding: 40px;
 }
 
 .title{
-  color: #292929;
+  color: #fff;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 3px;
   font-size:  50px;
@@ -134,7 +173,7 @@ body {
 #arrow{
   position: absolute;
   padding: 10px 7px 10px 7px;
-  margin-left: 360px;
+  right: 10px;
   border: 1px solid #efefef;
   border-radius: 100px;
   background-color: #fefefe;
@@ -145,17 +184,25 @@ position: absolute;
 z-index: 999;
 height: 100vh;
 width: 2px;
-right: 10px;
-background-color: red;
-} #about, #portfolio, #contact {
-  height: 50px;
-  float:right;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+left: 50%;
+margin-left: -1px;
+background-color: white;
+} #nav-dot {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
   box-sizing: border-box;
-  padding: 10px;
+  background-color: white;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: 50px;
+  z-index: 999;
+} #nav-dot:hover{
+  background-color: #F46036;
+  border: 3px solid white;
 }
+
 </style>
 </head>
 
@@ -168,22 +215,21 @@ background-color: red;
 
   <div class="wrapper">
 
-  <div class="side"><div class="title">JANVI PATEL</div>
-  <div id="arrow" name="up" style="top: 10px;"> <img src="https://68.media.tumblr.com/1a03334a6505a216edef5084ed0aff50/tumblr_omx93mCjps1qi7le7o2_75sq.png" width="15"></div>
-<div id="arrow" name="down" style="bottom:10px;"> <img src="https://68.media.tumblr.com/bd9c7a90c49b699212baa22562a0f2e3/tumblr_omx93mCjps1qi7le7o1_75sq.png" width="15"></div></div>
-
+  <div class="side"><div class="title" style="border-bottom: 1px solid white;padding-bottom: 20px;">JANVI PATEL</div>
+  <div class="nav"></div>
+  <div id="nav-dot"></div>
+  <div id="nav-dot"></div>
+  <div id="nav-dot"></div>
+  <div id="nav-dot"></div>
+  <div id="nav-dot"></div>
+</div>
+  <div id="arrow" name="up" style="bottom: 70px;"> <img src="https://68.media.tumblr.com/1a03334a6505a216edef5084ed0aff50/tumblr_omx93mCjps1qi7le7o2_75sq.png" width="15"></div>
+  <div id="arrow" name="down" style="bottom:10px;"> <img src="https://68.media.tumblr.com/bd9c7a90c49b699212baa22562a0f2e3/tumblr_omx93mCjps1qi7le7o1_75sq.png" width="15"></div>
   <div id="gallery">
-  <div class="content" name="about">
+  <div class="content" name="about" title="About" style="top: 100px;">
     <div class="title" style="color: #292929; text-align: left; font-size: 40px;">I'm Janvi.</div>
     <div class="text">
-      <p>I am currently a first-year student at the University of Waterloo, aiming to obtain my Bachelor of Computer Science. </p>
-      <p>I am friendly, outgoing, and I have a keen interest in using my artistic talents in combination with my technical computer skills for graphic design, web design,
-      and front-end web development. I have self-taught experience in HTML/CSS/JQuery/JavaScript, and plan to widen my horizons to
-      enhance my coding skills in C, Python, and Java so that I can practice with Android app development in the future.</p>
-      <p>Outside of school, I enjoy participating in coding, sports (volleyball, basketball), reading, music (piano, guitar, clarinet), visual arts, and volunteering activities.</p>
-      <p>Overall, I am a hardworker and I enjoy challenging myself to do better and obtain better results. In the future, I would like to tackle on jobs that would allow
-      me to develop and grow as a person so that I am able to contribute to society even more. I hope to become a future role model to the younger generation of girls,
-      and inspire them to pursue careers in the STEM industry!</p></div></div>
+      hello jennifer</div></div>
 
       <div class="content" name="projects">
         <div class="title" style="color: #292929; text-align: left; font-size: 40px;">Here's What I've Done</div>
