@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<title>Five Stars Canada</title>
+<link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/3/31/553px-lib_maple_leaf.png">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Source+Sans+Pro|Lato|Open+Sans" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<style type="text/css">
+
+::selection {
+  background-color: rgba(58,88,166,1);
+  color: white;
+}
+::-moz-selection {
+  background-color: rgba(58,88,166,1);
+  color: white;
+}
+
+::-webkit-selection{
+  background: #292929;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  background-color: #000;
+  width: 0px;
+}
+a {
+  text-decoration: none;
+  outline:none;
+  -moz-outline-style:none;
+  -webkit-transition: all 0.0s;
+  -moz-transition: all 0.0s ;
+  -o-transition: all 0.0s
+  ;-ms-transition: all 0.0s;
+  transition: all 0.0s ;
+}
+  a:hover {
+    border:0px;
+    -webkit-transition: all 0.0s;
+    -moz-transition: all 0.0s ;
+    -o-transition: all 0.0s ;
+    -ms-transition: all 0.0s ;
+    transition: all 0.0s;
+    cursor: help;
+  }
+
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  cursor: crosshair;
+  color:#444;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#front {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  background-color: rgb(251,178,28);
+  margin:0;
+  margin-top: 100px;
+  color: #fff;
+  overflow-y: hidden;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.wrapper img{
+
+}
+
+.wrapper{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 30px;
+  background-color: white;
+  box-sizing: border-box;
+
+}
+
+#about{
+width: 100vw;
+height: calc(100vh - 100px);
+background: url('http://i63.tinypic.com/9k47y1.jpg') center center no-repeat;
+background-size: cover;
+margin:0;
+color: #fff;
+overflow-y: hidden;
+padding: 30px;
+box-sizing: border-box;
+font-size: 50px;
+}
+
+#about img{
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  filter: FlipH;
+}
+.title {
+font-size: 40px;
+padding: 10px;
+text-align: left;
+font-family: 'Archivo Narrow';
+width: 550px;
+}
+.text {
+font-size: 18px;
+line-height: 150%;
+padding: 10px;
+text-align: left;
+font-family: 'Source Sans Pro';
+width: 475px;
+}
+
+.gallery{
+  display: inline-block;
+  position: relative;
+  margin-top: 50px;
+  float: left;
+  margin-left: 50px;
+  width: 25vw;
+  height: 300px;
+} .cover{
+  position: absolute;
+  width: 25vw;
+  height: 300px;
+  background-color: rgba(0,0,0, 0.3);
+  font-size: 30px;
+  padding: 10px;
+  box-sizing:border-box;
+  padding-top: 125px;
+  color: white;
+  text-align: center;
+  font-family: 'Archivo Narrow';
+  letter-spacing: 3px;
+  -webkit-transition: 0.5s; /* Safari */
+   transition:  0.5s;
+} .cover:hover{
+opacity: 0;
+-webkit-transition: 0.5s; /* Safari */
+ transition:  0.5s;
+}
+#pellet{
+  background-image: url('https://sc01.alicdn.com/kf/UT84rlwX5FXXXagOFbXG/Low-Price-Factory-Wood-Pellet.jpg');
+}#textile{
+  background-image: url('http://g04.a.alicdn.com/kf/HTB1BV60IFXXXXXuXVXXq6xXFXXXW/Free-shipping-59-width-font-b-satin-b-font-fabric-silk-decoration-pure-color-cloth-performance.jpg');
+  background-size: cover;
+}#spout{
+  background-image: url('http://69.89.31.90/~fivestn8/wp-content/uploads/2016/05/2-1.jpg');
+  background-size: cover;
+}
+
+#header {
+  position: fixed;
+  margin: 0;
+  top : 0;
+  width: 100vw;
+  z-index: 9999;
+  background-color: rgba(255,255,255,1);
+  padding: 10px;
+  box-sizing:border-box;
+  border-bottom: #fb2 2px solid;
+} #main_title{
+  display:inline;
+  float: left;
+  width: auto;
+  height: 71px;
+  margin-top: 0px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.links {
+  width: auto;
+  height: auto;
+  margin-top: 30px;
+  background-color: transparent;
+  z-index: 999;
+  float: right;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+} .links a {
+  padding: 5px;
+  border-bottom: 1px solid #46a;
+  outline: none;
+  margin-right: 15px;
+  color: #292929;
+} .links a:hover{
+  border-bottom: 2px solid #fb2;
+}
+
+.circle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  left: 50%;
+  top: 55%;
+  margin-left: -200px;
+  margin-top: -200px;
+  text-align: center;
+  background-color: #fff;
+  color: #292929;
+  box-sizing: border-box;
+  padding: 50px;
+  border-radius: 300px;
+}
+</style>
+
+<body>
+  <div id="header"><img src="http://i66.tinypic.com/of21hv.jpg" style="float:left;">
+    <div id="main_title"><span style="font-size: 40px; text-transform: uppercase;">Five Stars</span>
+      <br> Canada Ltd. <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/553px-lib_maple_leaf.png" width="10"></div>
+    <div class="links">
+    <a href="#">home</a>
+    <a href="#">about</a>
+    <a href="#">products & services</a>
+    <a href="#">contact</a>
+  </div>
+  </div>
+  <div id="front"><div class="circle">
+    <span style="border-bottom: 1px solid #292929; padding-bottom: 5px;
+    font-size: 30px; text-transform: uppercase;">welcome</span>
+    <span style="display: block; margin-top: 30px;line-height: 200%; width: 300px;">
+      We are a textile import and export company based in Toronto, Canada.
+    Since 2004, we have been supplied with only the highest quality textiles from the major Canadian textile wholesalers.
+</span>
+  </div></div>
+  <div class="wrapper" id="about">Who are we?<div class="title">We are a textile import and export company based in Toronto, Canada.</div>
+  <div class="text">Since 2004, we have been supplied with only the highest quality textiles from the major Canadian textile wholesalers.
+    With international recognition spanning from Mexico to Brazil and even U.A.E,
+    we plan to continue our steady growth and expand our market to the U.S.A. All of our products are made in Korea with consistently proven Canadian quality.
+    Our main products are printed or basic holographic foil on nylon spandex.
+    With returning customers such as the Canadian Figure Skating Association, Canadian Dance Sports Association, Canadian Cheerleader Association, and many more,
+    our quality speaks for itself. Unlike other companies, we can supply various unique designs and coloured spandex to you at a competitive price</div></div>
+<div class="wrapper" id="products">Our Products<div class="title">Here's what we have to offer.</div>
+  <div class="gallery" id="pellet"><div class="cover">PELLETS</div></div>
+  <div class="gallery" id="textile"><div class="cover">TEXTILES</div></div>
+  <div class="gallery" id="spout"><div class="cover">SPOUT POUCHES</div></div>
+</div>
+
+</body>
+</html>
