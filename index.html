@@ -1,299 +1,221 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<html>
 <head>
-<title> Janvi Patel </title>
-<link rel="shortcut icon" href="https://scontent-yyz1-1.xx.fbcdn.net/v/t34.0-12/15910082_10212177613103447_1917595048_n.png?oh=de0dd57b9209c2e3b11b8ba5ed702a90&oe=589A7FEF">
-<link href="https://fonts.googleapis.com/css?family=Quattrocento|Lora|Oswald:300,400,500,600" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('body').animate({
-      opacity: 1},
-    1500);
+<title>wazoo</title>
 
-  $("#front").click(function() {
-      $('html,body').animate({
-          scrollTop: $(".wrapper").offset().top},
-          1000);
-      $('#gallery').animate({
-          scrollTop:  0},
-          1000);
-  });
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  var viewportHeight = $(window).height();
-
-  $("#arrow[name='down']").click(function() {
-    $('#gallery').animate({
-        scrollTop:  '+='+viewportHeight},
-        1000);
-  });
-
-  $("#arrow[name='up']").click(function() {
-    $('#gallery').animate({
-        scrollTop: '-='+viewportHeight},
-        1000);
-  });
-
-
-    jQuery.fn.scrollTo = function(elem, speed) {
-        $(this).animate({
-            scrollTop:  $(this).scrollTop() - $(this).offset().top + $(elem).offset().top
-        }, speed == undefined ? 1000 : speed);
-        return this;
-    };
-
-  $('a[id="about"]').click(function () {
-      $("#gallery").scrollTo(".content[id='about']", 1500);
-  });
-
-  $('a[id="projects"]').click(function () {
-      $("#gallery").scrollTo(".content[id='projects']", 1500);
-  });
-
-  $('a[id="contact"]').click(function () {
-      $("#gallery").scrollTo(".content[id='contact']", 1500);
-  });
-
-});
-</script>
-
-</head>
-
-<style type="text/css">
-
-::selection {
-  background: #292929;
+<style>
+::selection{
   color: white;
+  background-color: #DE5021;
 }
-::-moz-selection {
-  background: #292929;
-  color: white;
-}
-
-::-webkit-selection{
-  background: #292929;
-  color: white;
-}
-
-#s-m-t-tooltip {
-  max-width:300px;
-  background-color: rgba(255,255,255,0.9);
-  border:1px solid #eee;
-  font-size:11px;
-  color: #292929;
-  letter-spacing:0px;
-  text-transform:lowercase;
-  padding:3px;
-  margin:15px 0px 0px 15px;
-  z-index:999;
-  content: attr(title);
-}
-
 ::-webkit-scrollbar {
-background-color: transparent;
-width: 3px;
+    background-color: transparent;
+    height: 0px;
+    width: 0px;
+    border: 0px solid transparent;
 }
-
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 0px solid transparent;
+}
 body {
-  opacity: 0;
-  padding: 0;
-  margin: 0;
+  margin:0;
   overflow-x: hidden;
-  cursor: crosshair;
-}
-
-#front {
-  width: 100vw;
-  height: 100vh;
-  background: url('http://i66.tinypic.com/14vn0w3.jpg;') center center no-repeat;
+  background-color: #ddd;
+  font-family: 'Open Sans';
+  color: #605E5E;
+  background-image: url('https://static.wixstatic.com/media/07ce31_1d9bb9dbd3b64d668250ee3428bf7bc3~mv2.jpg/v1/fill/w_749,h_499,al_c,q_90,usm_0.66_1.00_0.01/07ce31_1d9bb9dbd3b64d668250ee3428bf7bc3~mv2.webp');
+  background-repeat: no-repeat;
   background-size: cover;
-  margin: 0;
-  color: #fff;
-  overflow-y: hidden;
-}.circle {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  left: 50%;
-  top: 40%;
-  margin-left: -175px;
-  margin-top: -210px;
-  text-align: center;
-  background-color: #F46036;
-  box-sizing: border-box;
-  padding: 20px;
-  border-radius: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+ a {
+   color: #DE5021;
+   text-decoration: none;
+ } a:hover, a:active, a:visited, a:link {
+  color: #DE5021;
+  text-decoration: none;
+  outline: none;
 }
 
-.name {
-  font-size: 80px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
-  letter-spacing: 5px;
-  text-align: center;
-  color: #fff;
-}
-.wrapper {
-  position: relative;
+#wrapper {
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#gallery {
-  position:relative;
-  width: 100vw;
-  height: 100vh;
-  margin-left: 450px;
-  background-color: #f3f3f3;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  padding:0;
 }
 
 .content {
-  width: calc(100vw - 450px);
-  height: 100vh;
-  background-color: #eee;
-  box-sizing: border-box;
+  position: relative;
   padding: 50px;
-  font-size: 30px;
-  font-family: 'Quattrocento', serif;
-  overflow-y: hidden;
-}.text{
-  font-size: 15px;
-  line-height: 25px;
-  text-align: justify;
+  min-height: calc(100vh - 75px);
+  width: 70vw;
+  background-color: white;
+  margin: auto;
+  text-align: center;
 }
 
-.side{
-  position: absolute;
-  float: left;
-  width: 450px;
-  background-color: #F46036;
-  height: 100vh;
+#header {
+  position: relative;
+  padding: 10px;
+  width: 100vw;
+  top:0;
+  height: 77px;
+  background-color: #2F2E2E;
+  text-align: center;
   box-sizing: border-box;
-  padding: 40px;
-}
-
-.title{
-  color: #fff;
-  font-family: 'Oswald', sans-serif;
-  letter-spacing: 3px;
-  font-size:  50px;
-  text-align:center;
-  font-weight: 500;
-}
-
-#arrow{
-  position: absolute;
-  padding: 10px 7px 10px 7px;
-  right: 10px;
-  border: 1px solid #efefef;
-  border-radius: 100px;
-  background-color: #fefefe;
-  z-index: 9999;
+  z-index: 999999;
+  color: white;
+  padding-left: 25px;
 }
 
 .nav {
-position: absolute;
-z-index: 999;
-height: 100vh;
-width: 2px;
-left: 50%;
-margin-left: -1px;
-background-color: white;
-} .dots{
   position: absolute;
-  width: 30px;
-  height: 260px;
-  left: 50%;
-  margin-left: -15px;
-  background-color: transparent;
-
-}.dots a:link {
-  display:block;
-  position: relative;
-  height: 20px;
-  width: 20px;
-  border-radius: 50px;
+  top:0;
+  right:0;
+  padding: 10px;
   box-sizing: border-box;
-  background-color: white;
-  left: 50%;
-  margin-left: -10px;
-  margin-top: 50px;
-  z-index: 999;
-}
-.dots a:hover{
-  background-color: #F46036;
-  border: 3px solid white;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  height: 75px;
+} .nav a{
+  display: flex;
+  padding: 10px;
+  color: white;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
 }
 
-.dots .tooltiptext {
-    opacity: 0;
-    width: 80px;
+
+#title {
+  font-size: 40px;
+}
+
+#details{
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+input, select {
+  position: relative;
+  width: 75%;
+  height: 40px;
+  margin-top: 10px;
+  padding: 8px;
+  outline:none;
+  font-size: 15px;
+}
+
+input[type="submit"], button {
+    width: 150px; /* width of image */
+    height: 50px; /* height of image */
+    border: 0;
+    background-color: #DE5021;
     color: white;
-    text-align: left;
-    font-family: 'Consolas', sans-serif;
-    font-size: 12px;
-    letter-spacing: 3px;
-    /* Position the tooltip */
-    position: absolute;
-    left:20px;
-    z-index: 1;
-    -webkit-transition: 0.5s; /* Safari */
-   transition: 0.5s;
+    font-size: 14px;
+    margin: 10px;
 }
 
-.dots a:hover .tooltiptext {
-  opacity: 1;
-  left: 40px;
-  -webkit-transition: 0.5s; /* Safari */
-   transition:  0.5s;
+form {
+  font-size: 16px;
 }
 
+#questions {
+  position: relative;
+  height: 100px;
+  width: 85%;
+  background-color: rgba(255,255,255, 0.6);
+  margin: auto;
+  margin-top: 100px;
+}
+
+#next {
+  position: relative;
+  width: 50px;
+  height: 38px;
+  font-size: 13px;
+  top: -3px;
+  left: 0px;
+  display: inline-flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.search_type {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  margin-top: -39px;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  align-items: center; /* align vertical */
+  text-transform: uppercase;
+} .search_type a {
+  padding: 10px;
+  width: 125px;
+  background-color: white;
+  margin-right: 5px;
+  font-weight: 700;
+
+}
 </style>
 </head>
 
 <body>
-  <div id="front">
-    <div class="circle"><div class="name">JANVI PATEL</div></div>
+  <div id="wrapper">
+    <div id="header"><div id="title" style="text-align:left; font-weight: bold;"><a href="./index.html" style="color: white;">wa<span style="color: #DE5021;">zoo</span></a><br></div>
+    <div class="nav">
+      <a href="./index">Home</a>
+      <a href="#">Contact Us</a>
+      <button style="width: auto; "><a href="./signup.html">Create a Free Account</a></button>
+  </div></div>
+    <div class="content" style="background-color: transparent; padding:0px;">
+      <div id="title" style="color: #FFFFFF; font-size: 70px; font-weight:700;">wa<span style="color: #DE5021;">zoo</span></div>
+        <span style="font-size: 25px; color: #FFFFFF; font-weight: bold; line-height: 200%;">Find your favourite dating app!<br></span>
+        <span style="font-size: 16px; color: #FFFFFF;">The best dating apps and sites selected for you.</span>
 
-  </div>
-
-
-  <div class="wrapper">
-
-  <div class="side"><div class="title" style="border-bottom: 1px solid white;padding-bottom: 20px;">JANVI PATEL</div>
-  <div class="nav"></div>
-  <div class="dots">
-  <a href="" onclick="return false;" id="about"><span class="tooltiptext">about me</span></a>
-  <a href="" onclick="return false;" id="projects"><span class="tooltiptext">projects</span></a>
-  <a href="" onclick="return false;" id="contact"><span class="tooltiptext">contact</span></a>
-</div>
-</div>
-  <div id="arrow" name="up" style="bottom: 70px;"> <img src="https://68.media.tumblr.com/1a03334a6505a216edef5084ed0aff50/tumblr_omx93mCjps1qi7le7o2_75sq.png" width="15"></div>
-  <div id="arrow" name="down" style="bottom:10px;"> <img src="https://68.media.tumblr.com/bd9c7a90c49b699212baa22562a0f2e3/tumblr_omx93mCjps1qi7le7o1_75sq.png" width="15"></div>
-  <div id="gallery">
-  <div class="content" id="about" style="top: 100px;">
-    <div class="title" style="color: #292929; text-align: left; font-size: 40px;">I'm Janvi.</div>
-    <div class="text">
-      THIS WEBSITE IS CURRENTLY UNDER CONSTRUCTION... PLEASE COME BACK AGAIN!</div></div>
-
-      <div class="content" id="projects">
-        <div class="title" style="color: #292929; text-align: left; font-size: 40px;">Here's What I've Done</div>
-        <div class="text">
-          project gallery
-        </div></div>
-          <div class="content" id="contact">
-            <div class="title" style="color: #292929; text-align: left; font-size: 40px;">Here's Where to Find Me</div>
-            <div class="text">
-              Details coming soon.
-            </div></div>
+        <div id="questions">
+          <div class="search_type">
+            <a href="#">normal search</a>
+            <a href="#" style="color: #494949;">fast search</a>
+          </div>
+          <br>
+          <select name="device" form="normal">
+            <option value="android">Android</option>
+            <option value="iphone">iPhone</option>
+              </select>
+            <div id="next" style="top:7px;">
+              <form action="./age_normal.html" id="normal">
+              <input type="submit" value="" style="
+            background-image:url('https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_1-512.png');
+            background-size: contain;
+            width: 30px;
+            background-repeat: no-repeat;
+            height: auto;
+            left: 0px;
+            background-color: transparent;
+            display: inline-flex;
+            justify-content: center; /* align horizontal */
+            align-items: center; /* align vertical */">
+            <form>
+            </div>
+        </div>
     </div>
 
 </div>
 
+
+</div>
+</div>
 </body>
 </html>
