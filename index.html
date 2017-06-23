@@ -115,7 +115,6 @@ body {
 
 .header {
   position: relative;
-  top:0;
   background-color: #2F2E2E;
   text-align: center;
   box-sizing: border-box;
@@ -124,10 +123,6 @@ body {
 }
 
 .nav {
-  position: absolute;
-  top:0;
-  right:0;
-  padding: 10px;
   box-sizing: border-box;
   font-size: 12px;
   letter-spacing: 1px;
@@ -135,8 +130,7 @@ body {
   display: flex;
   justify-content: center; /* align horizontal */
   align-items: center; /* align vertical */
-  height: 75px;
-} .nav a{
+} .nav a {
   display: flex;
   padding: 10px;
   color: white;
@@ -222,26 +216,28 @@ form {
 
 <div class="row header">
     <div class="col-4">
-      <div id="title"><a href="./index.html" style="color: white;">wazoo</a></div>
+      <div id="title">
+        <div id="title" style="font-weight: bold;"><a href="./index.html" style="color: white;">wa<span style="color: #DE5021;">zoo</span></a></div>
+      </div>
     </div>
     <div class="col-4 hidden"></div>
     <div class="col-4">
       <div class="nav">
       <a href="./index">Home</a>
       <a href="#">Contact Us</a>
-      <button style="width: auto; "><a href="./signup.html">Create a Free Account</a></button>
+      <button style="width: auto;"><a href="./signup.html">Create a Free Account</a></button>
     </div>
   </div>
 </div>
 
 <div class="row">
-<div class="col-4 hidden"></div>
-<div class="col-4">
-  <div id="title" style="color: #FFFFFF; font-size: 70px; font-weight:700;">wa<span style="color: #DE5021;">zoo</span></div>
+  <div class="col-4 hidden"></div>
+  <div class="col-4">
+    <div id="title" style="color: #FFFFFF; font-size: 70px; font-weight:700;">wa<span style="color: #DE5021;">zoo</span></div>
     <span style="font-size: 25px; color: #FFFFFF; font-weight: bold; line-height: 200%;">Find your favourite dating app!<br></span>
     <span style="font-size: 16px; color: #FFFFFF;">The best dating apps and sites selected for you.</span>
-</div>
-<div class="col-4 hidden"></div>
+  </div>
+  <div class="col-4 hidden"></div>
 </div>
 
 <div class="row">
