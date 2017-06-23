@@ -1,17 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>wazoo</title>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
+* {
+  text-align: center;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
 ::selection{
   color: white;
   background-color: #DE5021;
@@ -60,18 +113,14 @@ body {
   text-align: center;
 }
 
-#header {
+.header {
   position: relative;
-  padding: 10px;
-  width: 100vw;
   top:0;
-  height: 77px;
   background-color: #2F2E2E;
   text-align: center;
   box-sizing: border-box;
   z-index: 999999;
   color: white;
-  padding-left: 25px;
 }
 
 .nav {
@@ -97,9 +146,8 @@ body {
 
 
 #title {
-  font-size: 40px;
+  font-size: 35px;
 }
-
 #details{
   margin-top: 20px;
   text-transform: uppercase;
@@ -135,7 +183,7 @@ form {
   width: 85%;
   background-color: rgba(255,255,255, 0.6);
   margin: auto;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 #next {
@@ -162,60 +210,71 @@ form {
   text-transform: uppercase;
 } .search_type a {
   padding: 10px;
-  width: 125px;
+  width: 33.33%;
   background-color: white;
   margin-right: 5px;
   font-weight: 700;
-
 }
+
 </style>
 </head>
-
 <body>
-  <div id="wrapper">
-    <div id="header"><div id="title" style="text-align:left; font-weight: bold;"><a href="./index.html" style="color: white;">wa<span style="color: #DE5021;">zoo</span></a><br></div>
-    <div class="nav">
+
+<div class="row header">
+    <div class="col-4">
+      <div id="title"><a href="./index.html" style="color: white;">wazoo</a></div>
+    </div>
+    <div class="col-4 hidden"></div>
+    <div class="col-4">
+      <div class="nav">
       <a href="./index">Home</a>
       <a href="#">Contact Us</a>
       <button style="width: auto; "><a href="./signup.html">Create a Free Account</a></button>
-  </div></div>
-    <div class="content" style="background-color: transparent; padding:0px;">
-      <div id="title" style="color: #FFFFFF; font-size: 70px; font-weight:700;">wa<span style="color: #DE5021;">zoo</span></div>
-        <span style="font-size: 25px; color: #FFFFFF; font-weight: bold; line-height: 200%;">Find your favourite dating app!<br></span>
-        <span style="font-size: 16px; color: #FFFFFF;">The best dating apps and sites selected for you.</span>
-
-        <div id="questions">
-          <div class="search_type">
-            <a href="#">normal search</a>
-            <a href="#" style="color: #494949;">fast search</a>
-          </div>
-          <br>
-          <select name="device" form="normal">
-            <option value="android">Android</option>
-            <option value="iphone">iPhone</option>
-              </select>
-            <div id="next" style="top:7px;">
-              <form action="./age_normal.html" id="normal">
-              <input type="submit" value="" style="
-            background-image:url('https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_1-512.png');
-            background-size: contain;
-            width: 30px;
-            background-repeat: no-repeat;
-            height: auto;
-            left: 0px;
-            background-color: transparent;
-            display: inline-flex;
-            justify-content: center; /* align horizontal */
-            align-items: center; /* align vertical */">
-            <form>
-            </div>
-        </div>
     </div>
-
+  </div>
 </div>
 
+<div class="row">
+<div class="col-4 hidden"></div>
+<div class="col-4">
+  <div id="title" style="color: #FFFFFF; font-size: 70px; font-weight:700;">wa<span style="color: #DE5021;">zoo</span></div>
+    <span style="font-size: 25px; color: #FFFFFF; font-weight: bold; line-height: 200%;">Find your favourite dating app!<br></span>
+    <span style="font-size: 16px; color: #FFFFFF;">The best dating apps and sites selected for you.</span>
+</div>
+<div class="col-4 hidden"></div>
+</div>
 
+<div class="row">
+<div class="col-2"></div>
+<div class="col-8">
+  <div id="questions">
+    <div class="search_type">
+      <a href="#">normal search</a>
+      <a href="#" style="color: #494949;">fast search</a>
+    </div>
+    <br>
+    <select name="device" form="normal">
+      <option value="android">Android</option>
+      <option value="iphone">iPhone</option>
+        </select>
+      <div id="next" style="top:7px;">
+        <form action="./age_normal.html" id="normal">
+        <input type="submit" value="" style="
+      background-image:url('https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_1-512.png');
+      background-size: contain;
+      width: 30px;
+      background-repeat: no-repeat;
+      height: auto;
+      left: 0px;
+      background-color: transparent;
+      display: inline-flex;
+      justify-content: center; /* align horizontal */
+      align-items: center; /* align vertical */">
+      <form>
+      </div>
+  </div></div>
+  <div class="col-2"></div>
 </div>
-</div>
+
 </body>
 </html>
